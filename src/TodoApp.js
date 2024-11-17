@@ -1,12 +1,14 @@
 import React from "react";
+import { Provider } from "react-redux";
+import store from "./store";
 import TodoList from "./component/TodoList";
-import "./styles.css";
 
-export default function TodoApp() {
-  return (
-    <div className="todo-app">
-      <h1>Todo List</h1>
+const TodoApp = () => (
+  <Provider store={store}>
+    <div className="app-container">
       <TodoList />
     </div>
-  );
-}
+  </Provider>
+);
+
+export default TodoApp;
